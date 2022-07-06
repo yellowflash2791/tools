@@ -1,0 +1,32 @@
+GET /?caller=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net HTTP/1.1
+Host: account.thesun.co.uk
+User-Agent: Fuzz Faster U Fool v1.2.0-git
+Accept-Encoding: gzip
+
+
+---- ↑ Request ---- Response ↓ ----
+
+HTTP/1.1 302 Found
+Content-Length: 43
+Alt-Svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+Cache-Control: private, no-store, no-cache, must-revalidate, post-check=0, pre-check=0, no-transform
+Cf-Cache-Status: DYNAMIC
+Cf-Ray: 64142aba8c3edd97-SIN
+Cf-Request-Id: 09807908950000dd97fa9f3000000001
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 17 Apr 2021 08:08:41 GMT
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Location: https://thesun.co.uk/
+Ot-Baggage-Auth0-Request-Id: 64142aba8c3edd97
+Ot-Tracer-Sampled: true
+Ot-Tracer-Spanid: 38acae95391b2882
+Ot-Tracer-Traceid: 327b3cff4025a473
+Server: cloudflare
+Set-Cookie: __cfduid=da8853a530c9a5fdcdb6ea73d1bad31051618646921; expires=Mon, 17-May-21 08:08:41 GMT; path=/; domain=.account.thesun.co.uk; HttpOnly; SameSite=Lax; Secure
+Strict-Transport-Security: max-age=31536000
+Vary: Accept, Accept-Encoding
+X-Auth0-Requestid: d9f82a19b21b3de27346
+X-Content-Type-Options: nosniff
+
+Found. Redirecting to https://thesun.co.uk/

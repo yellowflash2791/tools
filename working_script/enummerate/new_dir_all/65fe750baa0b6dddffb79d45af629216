@@ -1,0 +1,24 @@
+GET /?ignore=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net HTTP/1.1
+Host: account.thesun.co.uk
+User-Agent: Fuzz Faster U Fool v1.2.0-git
+Accept-Encoding: gzip
+
+
+---- ↑ Request ---- Response ↓ ----
+
+HTTP/1.1 301 Moved Permanently
+Transfer-Encoding: chunked
+Alt-Svc: h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+Cache-Control: max-age=3600
+Cf-Ray: 64142803ae6c1708-SIN
+Cf-Request-Id: 098077564800001708af1a9000000001
+Connection: keep-alive
+Date: Sat, 17 Apr 2021 08:06:50 GMT
+Expires: Sat, 17 Apr 2021 09:06:50 GMT
+Location: https://account.thesun.co.uk/?ignore=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net
+Server: cloudflare
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+
+0
+

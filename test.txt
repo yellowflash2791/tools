@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/jobertabma/relative-url-extractor/master/demo-file.js

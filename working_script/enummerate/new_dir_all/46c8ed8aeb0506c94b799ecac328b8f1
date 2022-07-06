@@ -1,0 +1,19 @@
+GET /?name1=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net HTTP/1.1
+Host: click.email.thesun.co.uk
+User-Agent: Fuzz Faster U Fool v1.2.0-git
+Accept-Encoding: gzip
+
+
+---- ↑ Request ---- Response ↓ ----
+
+HTTP/1.1 302 Found
+Connection: close
+Content-Length: 137
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Date: Sat, 17 Apr 2021 08:08:16 GMT
+Location: /redirect_error.html
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="/redirect_error.html">here</a>.</h2>
+</body></html>

